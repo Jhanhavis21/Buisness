@@ -1,0 +1,320 @@
+WORKSPACE: C:\Users\Toshiba\Desktop\skylark_drones
+FILES:
+Deal funnel Data.xlsx
+Skylark Drones - Full stack Assignment - JIT.docx.pdf
+Work_Order_Tracker Data.xlsx
+\nPDF: Skylark Drones - Full stack Assignment - JIT.docx.pdf
+PAGES: 3
+--- PAGE 1 ---
+Skylark  Drones  -  Assignment  
+Technical  Assignment:  Monday.com Business  Intelligence  Agent  
+Problem  Statement  
+Founders  and  executives  need  quick,  accurate  answers  to  business  questions  across  multiple  data  
+sources.
+ 
+Currently,
+ 
+this
+ 
+requires:
+ 
+●  
+Manually  pulling  data  from  monday.com boards  
+●
+ 
+Cleaning  inconsistent  data  formats  
+●
+ 
+Querying  information  across  multiple  boards  (work  orders,  deals,  pipeline)  
+●
+ 
+Creating  ad-hoc  analysis  for  each  query  
+●
+ 
+Dealing  with  missing  data  and  incomplete  records  
+The  Challenge  
+Business  data  is  messy.  A  founder  asks  "How's  our  pipeline  looking  for  energy  sector  this  
+quarter?"
+ 
+and
+ 
+someone
+ 
+needs
+ 
+to
+ 
+interpret
+ 
+that
+ 
+query,
+ 
+find
+ 
+relevant
+ 
+data
+ 
+across
+ 
+multiple
+ 
+boards,
+ 
+clean
+ 
+it,
+ 
+and
+ 
+provide
+ 
+meaningful
+ 
+insights
+ 
+Your  Task  
+Build  an  AI  agent  that  can  answer  founder-level  business  intelligence  queries  by  integrating  with  monday.com boards  containing  work  orders  and  deals  data.  
+Sample  Data  
+You  will  receive  two  CSV  files  to  import  into  monday.com:  
+1.  Work  Orders  -  Project  execution  data  
+2.  Deals  -  Sales  pipeline  data  
+P.S  -  Import  these  into  monday.com as  separate  boards.  Set  up  appropriate  column  types  and  structure  as  you  see  fit.  
+Note:  The  data  is  real-world  messy  data  -  Your  agent  must  handle  this  gracefully.  
+Core  Features  
+Your  agent  must  handle  these  areas:  
+1.  Monday.com Integration  
+●  
+Connect  to  monday.com via  MCP  or  API  
+●
+ 
+Handle  authentication  and  connection  management  
+
+--- PAGE 2 ---
+2.  Data  Resilience  
+●
+ 
+Handle  missing/null  values  gracefully  
+●
+ 
+Normalize  inconsistent  date  formats,  naming  conventions,  text  fields  
+●
+ 
+Provide  meaningful  results  even  with  incomplete  data  
+●
+ 
+Communicate  data  quality  issues  or  caveats  to  the  user  
+3.  Query  Understanding  
+●
+ 
+Interpret  founder-level  business  questions  
+●
+ 
+Ask  clarifying  questions  when  needed  
+4.  Business  Intelligence  
+●
+ 
+Answer  queries  about  revenue,  pipeline  health,  sectoral  performance,  operational  metrics  
+●
+ 
+Query  across  both  boards  when  needed  
+●
+ 
+Provide  context  and  insights,  not  just  raw  numbers  
+Additional  Requirement  (optional)  
+●
+ 
+"The  agent  should  help  prepare  data  for  leadership  updates"  
+How  you  interpret  and  implement  this  is  up  to  you.  Document  your  interpretation  in  your  
+Decision
+ 
+Log.
+ 
+Integration  Requirements  
+Monday.com —  Read  only  
+●
+ 
+Read:  All  data  from  both  boards  (Work  Orders  and  Deals)  
+●
+ 
+Use  MCP  or  API  —  your  choice  
+●  
+Important:  Do  not  hardcode  CSV  data.  Your  agent  must  query  monday.com dynamically.  
+Deliverables  
+1.  Hosted  Prototype  (Required)  
+●
+ 
+Working  agent  accessible  via  link  
+●
+ 
+Platform  of  your  choice  
+●
+ 
+Must  be  testable  without  local  setup  
+2.  Decision  Log  (Required,  2  page  max)  
+
+--- PAGE 3 ---
+●
+ 
+Key  assumptions  you  made  
+●
+ 
+Trade-offs  chosen  and  why  
+●
+ 
+What  you'd  do  differently  with  more  time  
+●
+ 
+How  you  interpreted  "leadership  updates"  
+3.  Source  Code  
+●
+ 
+ZIP  file  
+●  
+README  with  architecture  overview  and  setup  instructions  for  monday.com configuration  
+Technical  Expectations  
+1.  Conversational  Interface :  The  user  will  interact  with  your  agent  conversationally,  
+handle
+ 
+that
+ 
+to
+ 
+the
+ 
+best
+ 
+of
+ 
+your
+ 
+(agents')
+ 
+ability
+ 
+2.  Monday.com Integration :  Via  MCP  or  API  as  specified  above  
+3.  Error  Handling :  Graceful  handling  of  data  quality  issues  and  API  failures  
+4.  Tech  Stack:  Your  choice  —  justify  your  decisions  in  the  Decision  Log  
+Timeline  
+6  hours  
+Questions?  
+If  you  have  clarifying  questions,  document  your  assumptions  and  proceed.  Part  of  the  evaluation  
+is
+ 
+seeing
+ 
+how
+ 
+you
+ 
+handle
+ 
+ambiguity
+ 
+and
+ 
+make
+ 
+decisions
+ 
+with
+ 
+incomplete
+ 
+information.
+ 
+ 
+Good  luck!  
+File  Downloads  
+  –  pdf  upload  Deal funnel Data.xlsx
+ –  pdf  upload  Work_Order_Tracker Data.xlsx Submission  Link  
+https://forms.gle/aowDNBNUZD2hX6JJ8 
+ 
+
+--- WORKBOOK Deal funnel Data.xlsx ---
+SHEETS: ['Deal tracker']
+[Deal tracker] shape=(346, 12)
+Deal Name Owner code Client Code Deal Status Close Date (A) Closure Probability  Masked Deal value Tentative Close Date                   Deal Stage      Product deal Sector/service        Created Date
+   Naruto  OWNER_001  COMPANY089        Open            NaN                High           489360.0  2026-02-26 00:00:00     B. Sales Qualified Leads Service + Spectra         Mining 2025-12-26 00:00:00
+   Sasuke  OWNER_001  COMPANY091        Open            NaN                 NaN         17616960.0  2026-02-28 00:00:00     B. Sales Qualified Leads               NaN         Mining 2025-09-15 00:00:00
+   Sasuke  OWNER_002  COMPANY124        Open            NaN              Medium           611700.0  2026-02-26 00:00:00 E. Proposal/Commercials Sent               NaN      Powerline 2025-11-12 00:00:00
+   Sakura  OWNER_002  COMPANY046        Open            NaN                 Low          2348928.0  2026-03-20 00:00:00 E. Proposal/Commercials Sent               NaN      Powerline 2025-10-14 00:00:00
+   Sakura  OWNER_002  COMPANY148        Open            NaN                High           428190.0  2026-02-26 00:00:00 E. Proposal/Commercials Sent               NaN      Powerline 2025-10-10 00:00:00
+   Sakura  OWNER_002  COMPANY047        Open            NaN              Medium          2936160.0  2026-02-12 00:00:00 E. Proposal/Commercials Sent               NaN      Powerline 2025-07-07 00:00:00
+   Sakura  OWNER_003  COMPANY197        Open            NaN                 Low        305850000.0  2024-09-30 00:00:00               D. Feasibility      Pure Service         Tender 2024-08-30 00:00:00
+   Sakura  OWNER_001  COMPANY177     On Hold            NaN              Medium                NaN  2025-06-11 00:00:00          M. Projects On Hold               NaN      Powerline 2024-11-17 00:00:00
+   Sakura  OWNER_001  COMPANY094        Open            NaN              Medium                NaN  2025-06-12 00:00:00          M. Projects On Hold               NaN     Renewables 2024-11-17 00:00:00
+   Sakura  OWNER_001  COMPANY178     On Hold            NaN              Medium                NaN  2025-06-23 00:00:00          M. Projects On Hold               NaN     Renewables 2024-08-09 00:00:00
+COLUMNS: ['Deal Name', 'Owner code', 'Client Code', 'Deal Status', 'Close Date (A)', 'Closure Probability', 'Masked Deal value', 'Tentative Close Date', 'Deal Stage', 'Product deal', 'Sector/service', 'Created Date']
+NULL COUNT:
+Deal Name                 2
+Owner code               17
+Client Code               2
+Deal Status               1
+Close Date (A)          318
+Closure Probability     258
+Masked Deal value       181
+Tentative Close Date     74
+Deal Stage                0
+Product deal            170
+Sector/service            8
+Created Date              1
+DUPLICATE ROWS: 12
+---
+--- WORKBOOK Work_Order_Tracker Data.xlsx ---
+SHEETS: ['work order tracker']
+[work order tracker] shape=(177, 38)
+      Unnamed: 0         Unnamed: 1   Unnamed: 2           Unnamed: 3                               Unnamed: 4                   Unnamed: 5          Unnamed: 6          Unnamed: 7     Unnamed: 8          Unnamed: 9         Unnamed: 10           Unnamed: 11 Unnamed: 12            Unnamed: 13                                                                    Unnamed: 14         Unnamed: 15        Unnamed: 16                             Unnamed: 17                             Unnamed: 18                                    Unnamed: 19                                    Unnamed: 20                                        Unnamed: 21                                       Unnamed: 22                                        Unnamed: 23                Unnamed: 24         Unnamed: 25     Unnamed: 26          Unnamed: 27                 Unnamed: 28         Unnamed: 29      Unnamed: 30            Unnamed: 31          Unnamed: 32             Unnamed: 33        Unnamed: 34       Unnamed: 35     Unnamed: 36      Unnamed: 37
+Deal name masked Customer Name Code     Serial #       Nature of Work Last executed month of recurring project             Execution Status  Data Delivery Date      Date of PO/LOI  Document Type Probable Start Date   Probable End Date BD/KAM Personnel code      Sector           Type of Work Is any Skylark software platform part of the client deliverables in this deal?   Last invoice date latest invoice no. Amount in Rupees (Excl of GST) (Masked) Amount in Rupees (Incl of GST) (Masked) Billed Value in Rupees (Excl of GST.) (Masked) Billed Value in Rupees (Incl of GST.) (Masked) Collected Amount in Rupees (Incl of GST.) (Masked) Amount to be billed in Rs. (Exl. of GST) (Masked) Amount to be billed in Rs. (Incl. of GST) (Masked) Amount Receivable (Masked) AR Priority account Quantity by Ops Quantities as per PO Quantity billed (till date) Balance in quantity   Invoice Status Expected Billing Month Actual Billing Month Actual Collection Month WO Status (billed) Collection status Collection Date   Billing Status
+      Scooby-Doo      WOCOMPANY_002 SDPLDEAL-075     One time Project                                      NaN                    Completed 2025-09-27 00:00:00 2025-10-29 00:00:00 Purchase Order 2025-05-31 00:00:00 2025-06-03 00:00:00             OWNER_003      Mining Raw images/videography                                                                           NONE 2026-01-14 00:00:00   SDPL/FY25-26/916                               264398.08                             311989.7344                                            NaN                                              0                                                NaN                                         264398.08                                        311989.7344                          0                 NaN             NaN              5360 HA                         NaN                5360              NaN                    NaN                  NaN                     NaN                NaN               NaN             NaN  Update Required
+            Appa      WOCOMPANY_038 SDPLDEAL-101     Proof of Concept                                      NaN                  Not Started                 NaN 2025-07-31 00:00:00 Purchase Order 2025-08-11 00:00:00 2025-08-15 00:00:00             OWNER_002   Powerline   Powerline Inspection                                                                            NaN                 NaN                NaN                                  154150                                  181897                                            NaN                                              0                                                NaN                                            154150                                             181897                          0                 NaN             NaN                    4                         NaN                   4              NaN                    NaN                  NaN                     NaN               Open               NaN             NaN              NaN
+          Sakura      WOCOMPANY_002 SDPLDEAL-002     Monthly Contract                                      Dec Executed until current month 2025-12-31 00:00:00 2025-05-16 00:00:00 Purchase Order 2025-05-01 00:00:00 2026-04-30 00:00:00             OWNER_003      Mining      Volumetric survey                                                                           NONE                 NaN                NaN                              2984097.36                            3521234.8848                                   23959.682484                                   28272.425331                                                NaN                                    2960137.677516                                     3492962.459469               28272.425331                 NaN             NaN                 3000                         NaN                3000              NaN                    NaN                  NaN                     NaN               Open               NaN             NaN Partially Billed
+          Sakura      WOCOMPANY_002 SDPLDEAL-003     One time Project                                      NaN                    Completed                 NaN 2025-05-08 00:00:00 Purchase Order 2025-05-20 00:00:00 2025-05-31 00:00:00             OWNER_003      Mining Topography Survey: RGB                                                                           NONE 2025-09-15 00:00:00   SDPL/FY25-26/449                                  184980                                218276.4                                         184980                                       218276.4                                         66880.1356                                                 0                                                  0                151396.2644                 NaN             NaN                  600                         NaN                 600   Not billed yet                    NaN                  NaN                     NaN               Open               NaN             NaN              NaN
+       SpongeBob      WOCOMPANY_032 SDPLDEAL-004     One time Project                                      NaN                    Completed                 NaN 2025-05-06 00:00:00        LOA/LOI 2025-05-24 00:00:00 2025-06-20 00:00:00             OWNER_003   Powerline   Powerline Inspection                                                                           NONE                 NaN                NaN                             1132250.248                           1336055.29264                                  1215157.54408                                 1433885.902014                                                NaN                                      -82907.29608                                      -97830.609374             1433885.902014            Priority             NaN                59.33                         NaN               59.33              NaN                    NaN                  NaN                     NaN               Open               NaN             NaN           BIlled
+    Edward Elric      WOCOMPANY_008 SDPLDEAL-005     One time Project                                      NaN                    Completed                 NaN 2025-05-16 00:00:00 Purchase Order 2025-05-20 00:00:00 2025-05-31 00:00:00             OWNER_003  Renewables              Hydrology                                                                           NONE 2025-07-18 00:00:00   SDPL/FY25-26/359                                  135652                               160069.36                                         135652                                      160069.36                                          160069.36                                                 0                                                  0                          0                 NaN             NaN                    1                           1                   0     Fully Billed                    NaN                  NaN                     NaN             Closed               NaN             NaN              NaN
+          Pumbaa      WOCOMPANY_047 SDPLDEAL-001 Annual Rate Contract                                     June                      Ongoing                 NaN 2025-05-15 00:00:00 Purchase Order 2025-05-19 00:00:00 2025-11-19 00:00:00             OWNER_005  Renewables                 Others                                                                        SPECTRA 2025-09-06 00:00:00   SDPL/FY25-26/431                               3995568.0                              4714770.24                                        3662604                                     4321872.72                                         1405108.08                                            332964                                          392897.52                 2916764.64                 NaN             NaN                   12                           2                  10 Partially Billed                    NaN                  NaN                     NaN               Open               NaN             NaN              NaN
+          Sakura      WOCOMPANY_002 SDPLDEAL-006     Monthly Contract                                 November Executed until current month                 NaN 2025-05-21 00:00:00 Purchase Order 2025-05-01 00:00:00 2026-04-30 00:00:00             OWNER_003      Mining Topography Survey: RGB                                                                           NONE 2025-06-16 00:00:00   SDPL/FY25-26/064                                  727588                               858553.84                                  151417.191804                                  178672.286329                                         178672.182                                     576170.808196                                      679881.553671                   0.104329                 NaN             NaN                 1600                         NaN                1600 Partially Billed                    NaN                  NaN                     NaN               Open               NaN             NaN              NaN
+          Sakura      WOCOMPANY_002 SDPLDEAL-007     Monthly Contract                                      Dec Executed until current month                 NaN 2025-05-22 00:00:00 Purchase Order 2025-05-20 00:00:00 2026-04-30 00:00:00             OWNER_003      Mining Topography Survey: RGB                                                                           NONE 2025-09-06 00:00:00   SDPL/FY25-26/435                                 2293752                              2706627.36                                 1742808.443572                                 2056513.963415                                     1225606.681988                                     550943.556428                                      650113.396585              830907.281427                 NaN             NaN                 4800                         NaN                4800 Partially Billed                    NaN                  NaN                     NaN               Open               NaN             NaN              NaN
+COLUMNS: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15', 'Unnamed: 16', 'Unnamed: 17', 'Unnamed: 18', 'Unnamed: 19', 'Unnamed: 20', 'Unnamed: 21', 'Unnamed: 22', 'Unnamed: 23', 'Unnamed: 24', 'Unnamed: 25', 'Unnamed: 26', 'Unnamed: 27', 'Unnamed: 28', 'Unnamed: 29', 'Unnamed: 30', 'Unnamed: 31', 'Unnamed: 32', 'Unnamed: 33', 'Unnamed: 34', 'Unnamed: 35', 'Unnamed: 36', 'Unnamed: 37']
+NULL COUNT:
+Unnamed: 0       1
+Unnamed: 1       0
+Unnamed: 2       0
+Unnamed: 3      12
+Unnamed: 4     161
+Unnamed: 5       4
+Unnamed: 6     118
+Unnamed: 7       1
+Unnamed: 8      14
+Unnamed: 9      18
+Unnamed: 10     19
+Unnamed: 11     11
+Unnamed: 12      0
+Unnamed: 13      0
+Unnamed: 14     12
+Unnamed: 15     89
+Unnamed: 16     88
+Unnamed: 17      1
+Unnamed: 18      0
+Unnamed: 19     63
+Unnamed: 20      0
+Unnamed: 21     98
+Unnamed: 22      0
+Unnamed: 23      0
+Unnamed: 24      0
+Unnamed: 25    166
+Unnamed: 26    133
+Unnamed: 27     16
+Unnamed: 28    153
+Unnamed: 29     19
+Unnamed: 30     64
+Unnamed: 31    176
+Unnamed: 32    106
+Unnamed: 33    176
+Unnamed: 34     74
+Unnamed: 35    176
+Unnamed: 36    176
+Unnamed: 37    148
+DUPLICATE ROWS: 0
+---
