@@ -8,32 +8,45 @@ import routes from './routes/index.js';
 import { logger } from './utils/logger.js';
 
 const app = express();
+const normalizeOrigin = (origin: string) => origin.replace(/\/$/, '');
+
 const allowedOrigins = [
   config.frontendUrl,
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3000',
-  'http://127.0.0.1:3000'
-].filter(Boolean);
+  'http://127.0.0.1:3000',
+]
+  .filter(Boolean)
+  .map(normalizeOrigin);
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) {
-      callback(null, true);
-      return;
-    }
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) {
+        callback(null, true);
+        return;
+      }
 
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-      return;
-    }
+      const normalizedOrigin = normalizeOrigin(origin);
 
-    callback(new Error('Origin not allowed by CORS'));
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        callback(null, true);
+        return;
+      }
+
+      logger.error('CORS origin rejected', {
+        origin,
+        allowedOrigins,
+      });
+
+      callback(new Error('Origin not allowed by CORS'));
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 app.options('*', cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
