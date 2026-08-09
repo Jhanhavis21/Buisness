@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+
 import { config } from './config/environment.js';
 import { errorHandler } from './middleware/error-handler.js';
 import { requestLogger } from './middleware/request-logger.js';
@@ -8,7 +9,9 @@ import routes from './routes/index.js';
 import { logger } from './utils/logger.js';
 
 const app = express();
-const normalizeOrigin = (origin: string) => origin.replace(/\/$/, '');
+
+const normalizeOrigin = (origin: string) =>
+  origin.trim().replace(/\/$/, '');
 
 const allowedOrigins = [
   config.frontendUrl,
@@ -36,42 +39,37 @@ app.use(
       }
 
       logger.error('CORS origin rejected', {
-        origin,
+        origin: normalizedOrigin,
         allowedOrigins,
       });
 
       callback(new Error('Origin not allowed by CORS'));
     },
+
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-app.options('*', cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-      return;
-    }
 
-    callback(new Error('Origin not allowed by CORS'));
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
 app.use(express.json());
+
 app.use(requestLogger);
+
 app.use(validateEnv);
 
 app.use('/api', routes);
+
 app.use(errorHandler);
 
 const port = config.port;
 
 if (process.env.VERCEL !== '1') {
-  const server = app.listen(port,'0.0.0.0', () => {
-    logger.info('Backend server started', { port, environment: config.environment });
+  const server = app.listen(port, '0.0.0.0', () => {
+    logger.info('Backend server started', {
+      port,
+      environment: config.environment,
+    });
   });
 
   server.on('error', (error: NodeJS.ErrnoException) => {
@@ -80,7 +78,10 @@ if (process.env.VERCEL !== '1') {
       process.exit(1);
     }
 
-    logger.error('Server startup error', { message: error.message });
+    logger.error('Server startup error', {
+      message: error.message,
+    });
+
     process.exit(1);
   });
 }
