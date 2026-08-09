@@ -57,7 +57,7 @@ app.use(errorHandler);
 const port = config.port;
 
 if (process.env.VERCEL !== '1') {
-  const server = app.listen(port, () => {
+  const server = app.listen(port,'0.0.0.0', () => {
     logger.info('Backend server started', { port, environment: config.environment });
   });
 
