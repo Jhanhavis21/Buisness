@@ -15,6 +15,7 @@ const normalizeOrigin = (origin: string) =>
 
 const allowedOrigins = [
   config.frontendUrl,
+  'https://business-frontend.vercel.app',
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3000',
@@ -39,19 +40,17 @@ app.use(
       }
 
       logger.error('CORS origin rejected', {
-        origin: normalizedOrigin,
+        origin,
         allowedOrigins,
       });
 
       callback(new Error('Origin not allowed by CORS'));
     },
-
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-
 app.use(express.json());
 
 app.use(requestLogger);
